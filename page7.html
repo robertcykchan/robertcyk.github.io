@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>九型人格测试 - 第7页</title>
+    <style>
+        body {font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6}
+        .question {margin: 30px 0; padding: 15px; background: #f8f9fa; border-left: 4px solid #007bff}
+        button {padding: 12px 30px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer}
+        button:hover {background: #0056b3}
+        .nav-btns {margin-top: 40px; display: flex; justify-content: space-between}
+    </style>
+</head>
+<body>
+    <h2>九型人格测试（43-49题）</h2>
+    <form id="testForm">
+        <div class="question">
+            <p>43. 我的时间分配更倾向于：</p>
+            <label><input type="radio" name="q43" value="1" required> A. 独处思考和学习</label><br>
+            <label><input type="radio" name="q43" value="2"> B. 维护人际关系</label><br>
+            <label><input type="radio" name="q43" value="3"> C. 完成实际任务</label>
+        </div>
+
+        <div class="question">
+            <p>44. 在人际关系中，我优先考虑：</p>
+            <label><input type="radio" name="q44" value="1" required> A. 保持思想共鸣</label><br>
+            <label><input type="radio" name="q44" value="2"> B. 获得情感满足</label><br>
+            <label><input type="radio" name="q44" value="3"> C. 确保关系稳定</label>
+        </div>
+
+        <div class="question">
+            <p>45. 处理复杂信息时，我会：</p>
+            <label><input type="radio" name="q45" value="1" required> A. 建立思维导图分析</label><br>
+            <label><input type="radio" name="q45" value="2"> B. 关注情感关联性</label><br>
+            <label><input type="radio" name="q45" value="3"> C. 提取关键行动点</label>
+        </div>
+
+        <div class="question">
+            <p>46. 当长期处于压力时，我容易：</p>
+            <label><input type="radio" name="q46" value="1" required> A. 产生强迫性思维</label><br>
+            <label><input type="radio" name="q46" value="2"> B. 陷入抑郁情绪</label><br>
+            <label><input type="radio" name="q46" value="3"> C. 出现躯体化症状</label>
+        </div>
+
+        <div class="question">
+            <p>47. 对于自我反思，我通常：</p>
+            <label><input type="radio" name="q47" value="1" required> A. 每天进行系统化复盘</label><br>
+            <label><input type="radio" name="q47" value="2"> B. 根据情绪波动反思</label><br>
+            <label><input type="radio" name="q47" value="3"> C. 遇到问题时才反思</label>
+        </div>
+
+        <div class="question">
+            <p>48. 参加社交活动后，我需要：</p>
+            <label><input type="radio" name="q48" value="1" required> A. 长时间独处恢复</label><br>
+            <label><input type="radio" name="q48" value="2"> B. 与他人讨论感受</label><br>
+            <label><input type="radio" name="q48" value="3"> C. 通过运动释放能量</label>
+        </div>
+
+        <div class="question">
+            <p>49. 人生追求最重要的是：</p>
+            <label><input type="radio" name="q49" value="1" required> A. 获得智慧和真理</label><br>
+            <label><input type="radio" name="q49" value="2"> B. 体验深刻的情感</label><br>
+            <label><input type="radio" name="q49" value="3"> C. 创造实际的价值</label>
+        </div>
+
+        <div class="nav-btns">
+            <button type="button" onclick="window.location.href='page6.html'">上一页</button>
+            <button type="button" onclick="submitTest()">查看结果</button>
+        </div>
+    </form>
+
+    <script>
+        function submitTest(){
+            // 保存最后一页数据
+            const formData = new FormData(document.getElementById('testForm'));
+            for (let [name, value] of formData.entries()) {
+                localStorage.setItem(name, value);
+            }
+            window.location.href = 'result.html';
+        }
+    </script>
+</body>
+</html>

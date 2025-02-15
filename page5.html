@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>九型人格测试 - 第5页</title>
+    <style>
+        body {font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6}
+        .question {margin: 30px 0; padding: 15px; background: #f8f9fa; border-left: 4px solid #007bff}
+        button {padding: 12px 30px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer}
+        button:hover {background: #0056b3}
+        .nav-btns {margin-top: 40px; display: flex; justify-content: space-between}
+    </style>
+</head>
+<body>
+    <h2>九型人格测试（29-35题）</h2>
+    <form id="testForm">
+        <div class="question">
+            <p>29. 当处于高强度压力下，我会：</p>
+            <label><input type="radio" name="q29" value="1" required> A. 过度思考陷入焦虑</label><br>
+            <label><input type="radio" name="q29" value="2"> B. 情绪崩溃需要安抚</label><br>
+            <label><input type="radio" name="q29" value="3"> C. 变得易怒和攻击性</label>
+        </div>
+
+        <div class="question">
+            <p>30. 处理大量信息时，我通常：</p>
+            <label><input type="radio" name="q30" value="1" required> A. 建立分类系统管理</label><br>
+            <label><input type="radio" name="q30" value="2"> B. 关注感兴趣的部分</label><br>
+            <label><input type="radio" name="q30" value="3"> C. 快速抓住核心要点</label>
+        </div>
+
+        <div class="question">
+            <p>31. 在人际关系中，我经常扮演：</p>
+            <label><input type="radio" name="q31" value="1" required> A. 智慧顾问角色</label><br>
+            <label><input type="radio" name="q31" value="2"> B. 情感支持者角色</label><br>
+            <label><input type="radio" name="q31" value="3"> C. 问题解决者角色</label>
+        </div>
+
+        <div class="question">
+            <p>32. 对于生活方式，我更倾向：</p>
+            <label><input type="radio" name="q32" value="1" required> A. 保持规律和可预测性</label><br>
+            <label><input type="radio" name="q32" value="2"> B. 追求新鲜和多样性</label><br>
+            <label><input type="radio" name="q32" value="3"> C. 强调实用和效率</label>
+        </div>
+
+        <div class="question">
+            <p>33. 当需要做重大决定时，我会：</p>
+            <label><input type="radio" name="q33" value="1" required> A. 咨询多个专家意见</label><br>
+            <label><input type="radio" name="q33" value="2"> B. 听从内心感受</label><br>
+            <label><input type="radio" name="q33" value="3"> C. 自己快速做出判断</label>
+        </div>
+
+        <div class="question">
+            <p>34. 面对他人批评时，我更容易：</p>
+            <label><input type="radio" name="q34" value="1" required> A. 进行逻辑辩驳</label><br>
+            <label><input type="radio" name="q34" value="2"> B. 感到情感伤害</label><br>
+            <label><input type="radio" name="q34" value="3"> C. 产生对抗情绪</label>
+        </div>
+
+        <div class="question">
+            <p>35. 在团队合作中，我的价值体现在：</p>
+            <label><input type="radio" name="q35" value="1" required> A. 提供专业知识</label><br>
+            <label><input type="radio" name="q35" value="2"> B. 维系团队和谐</label><br>
+            <label><input type="radio" name="q35" value="3"> C. 推动项目进展</label>
+        </div>
+
+        <div class="nav-btns">
+            <button type="button" onclick="window.location.href='page4.html'">上一页</button>
+            <button type="button" onclick="saveDataAndNext('page6.html')">下一页</button>
+        </div>
+    </form>
+
+    <script>
+        function saveDataAndNext(nextPage){
+            const formData = new FormData(document.getElementById('testForm'));
+            for (let [name, value] of formData.entries()) {
+                localStorage.setItem(name, value);
+            }
+            window.location.href = nextPage;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>九型人格测试 - 第6页</title>
+    <style>
+        body {font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6}
+        .question {margin: 30px 0; padding: 15px; background: #f8f9fa; border-left: 4px solid #007bff}
+        button {padding: 12px 30px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer}
+        button:hover {background: #0056b3}
+        .nav-btns {margin-top: 40px; display: flex; justify-content: space-between}
+    </style>
+</head>
+<body>
+    <h2>九型人格测试（36-42题）</h2>
+    <form id="testForm">
+        <div class="question">
+            <p>36. 当面对情感需求时，我通常：</p>
+            <label><input type="radio" name="q36" value="1" required> A. 理性分析情感本质</label><br>
+            <label><input type="radio" name="q36" value="2"> B. 渴望深度情感共鸣</label><br>
+            <label><input type="radio" name="q36" value="3"> C. 用行动表达关怀</label>
+        </div>
+
+        <div class="question">
+            <p>37. 在陌生社交场合，我的能量状态：</p>
+            <label><input type="radio" name="q37" value="1" required> A. 保持观察节省能量</label><br>
+            <label><input type="radio" name="q37" value="2"> B. 主动释放热情能量</label><br>
+            <label><input type="radio" name="q37" value="3"> C. 根据目标调节能量</label>
+        </div>
+
+        <div class="question">
+            <p>38. 对于人生目标，我更关注：</p>
+            <label><input type="radio" name="q38" value="1" required> A. 知识体系的完善</label><br>
+            <label><input type="radio" name="q38" value="2"> B. 情感关系的质量</label><br>
+            <label><input type="radio" name="q38" value="3"> C. 现实成就的积累</label>
+        </div>
+
+        <div class="question">
+            <p>39. 当需要学习新技能时，我会：</p>
+            <label><input type="radio" name="q39" value="1" required> A. 系统化深入学习</label><br>
+            <label><input type="radio" name="q39" value="2"> B. 选择感兴趣的部分</label><br>
+            <label><input type="radio" name="q39" value="3"> C. 快速掌握实用技巧</label>
+        </div>
+
+        <div class="question">
+            <p>40. 面对他人痛苦时，我的反应：</p>
+            <label><input type="radio" name="q40" value="1" required> A. 分析痛苦的根源</label><br>
+            <label><input type="radio" name="q40" value="2"> B. 感同身受地流泪</label><br>
+            <label><input type="radio" name="q40" value="3"> C. 寻找解决途径</label>
+        </div>
+
+        <div class="question">
+            <p>41. 在消费习惯上，我倾向于：</p>
+            <label><input type="radio" name="q41" value="1" required> A. 谨慎储蓄避免浪费</label><br>
+            <label><input type="radio" name="q41" value="2"> B. 为情感价值买单</label><br>
+            <label><input type="radio" name="q41" value="3"> C. 投资实用必需品</label>
+        </div>
+
+        <div class="question">
+            <p>42. 当计划被打乱时，我会：</p>
+            <label><input type="radio" name="q42" value="1" required> A. 重新制定详细方案</label><br>
+            <label><input type="radio" name="q42" value="2"> B. 随遇而安享受变化</label><br>
+            <label><input type="radio" name="q42" value="3"> C. 快速建立新秩序</label>
+        </div>
+
+        <div class="nav-btns">
+            <button type="button" onclick="window.location.href='page5.html'">上一页</button>
+            <button type="button" onclick="saveDataAndNext('page7.html')">下一页</button>
+        </div>
+    </form>
+
+    <script>
+        function saveDataAndNext(nextPage){
+            const formData = new FormData(document.getElementById('testForm'));
+            for (let [name, value] of formData.entries()) {
+                localStorage.setItem(name, value);
+            }
+            window.location.href = nextPage;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>九型人格测试 - 第4页</title>
+    <style>
+        body {font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6}
+        .question {margin: 30px 0; padding: 15px; background: #f8f9fa; border-left: 4px solid #007bff}
+        button {padding: 12px 30px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer}
+        button:hover {background: #0056b3}
+        .nav-btns {margin-top: 40px; display: flex; justify-content: space-between}
+    </style>
+</head>
+<body>
+    <h2>九型人格测试（22-28题）</h2>
+    <form id="testForm">
+        <div class="question">
+            <p>22. 处理日常事务时，我倾向于：</p>
+            <label><input type="radio" name="q22" value="1" required> A. 制定系统化流程</label><br>
+            <label><input type="radio" name="q22" value="2"> B. 根据心情灵活处理</label><br>
+            <label><input type="radio" name="q22" value="3"> C. 快速解决主要问题</label>
+        </div>
+
+        <div class="question">
+            <p>23. 当感到自我价值受质疑时，我会：</p>
+            <label><input type="radio" name="q23" value="1" required> A. 用成就证明自己</label><br>
+            <label><input type="radio" name="q23" value="2"> B. 渴望得到情感支持</label><br>
+            <label><input type="radio" name="q23" value="3"> C. 表现出强势态度</label>
+        </div>
+
+        <div class="question">
+            <p>24. 遇到突发事件时，我的第一反应是：</p>
+            <label><input type="radio" name="q24" value="1" required> A. 保持冷静分析状况</label><br>
+            <label><input type="radio" name="q24" value="2"> B. 感到慌乱需要支持</label><br>
+            <label><input type="radio" name="q24" value="3"> C. 立即采取控制措施</label>
+        </div>
+
+        <div class="question">
+            <p>25. 关于个人隐私，我通常：</p>
+            <label><input type="radio" name="q25" value="1" required> A. 严格保护个人信息</label><br>
+            <label><input type="radio" name="q25" value="2"> B. 选择性分享经历</label><br>
+            <label><input type="radio" name="q25" value="3"> C. 不介意公开细节</label>
+        </div>
+
+        <div class="question">
+            <p>26. 在时间管理方面，我常常：</p>
+            <label><input type="radio" name="q26" value="1" required> A. 严格按计划执行</label><br>
+            <label><input type="radio" name="q26" value="2"> B. 经常被突发事件打乱</label><br>
+            <label><input type="radio" name="q26" value="3"> C. 优先处理重要事项</label>
+        </div>
+
+        <div class="question">
+            <p>27. 对于承诺的态度，我倾向于：</p>
+            <label><input type="radio" name="q27" value="1" required> A. 慎重承诺但必定履行</label><br>
+            <label><input type="radio" name="q27" value="2"> B. 根据情况调整承诺</label><br>
+            <label><input type="radio" name="q27" value="3"> C. 快速承诺积极兑现</label>
+        </div>
+
+        <div class="question">
+            <p>28. 当处于竞争环境时，我会：</p>
+            <label><input type="radio" name="q28" value="1" required> A. 暗中观察对手策略</label><br>
+            <label><input type="radio" name="q28" value="2"> B. 展现个人独特优势</label><br>
+            <label><input type="radio" name="q28" value="3"> C. 正面迎接挑战</label>
+        </div>
+
+        <div class="nav-btns">
+            <button type="button" onclick="window.location.href='page3.html'">上一页</button>
+            <button type="button" onclick="saveDataAndNext('page5.html')">下一页</button>
+        </div>
+    </form>
+
+    <script>
+        function saveDataAndNext(nextPage){
+            const formData = new FormData(document.getElementById('testForm'));
+            for (let [name, value] of formData.entries()) {
+                localStorage.setItem(name, value);
+            }
+            window.location.href = nextPage;
+        }
+    </script>
+</body>
+</html>

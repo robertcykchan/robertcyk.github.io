@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>九型人格测试 - 第2页</title>
+    <style>
+        body {font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6}
+        .question {margin: 30px 0; padding: 15px; background: #f8f9fa; border-left: 4px solid #007bff}
+        button {padding: 12px 30px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer}
+        button:hover {background: #0056b3}
+        .nav-btns {margin-top: 40px; display: flex; justify-content: space-between}
+    </style>
+</head>
+<body>
+    <h2>九型人格测试（8-14题）</h2>
+    <form id="testForm">
+        <div class="question">
+            <p>8. 当遇到冲突时，我通常会：</p>
+            <label><input type="radio" name="q8" value="1" required> A. 主动化解矛盾，寻求双赢方案</label><br>
+            <label><input type="radio" name="q8" value="2"> B. 尽量回避，避免正面冲突</label><br>
+            <label><input type="radio" name="q8" value="3"> C. 坚持自己的立场，据理力争</label>
+        </div>
+
+        <div class="question">
+            <p>9. 我认为自己最大的弱点是：</p>
+            <label><input type="radio" name="q9" value="1" required> A. 过于理想化，脱离现实</label><br>
+            <label><input type="radio" name="q9" value="2"> B. 情绪波动大，容易焦虑</label><br>
+            <label><input type="radio" name="q9" value="3"> C. 固执己见，缺乏灵活性</label>
+        </div>
+
+        <div class="question">
+            <p>10. 在团队中，我通常扮演：</p>
+            <label><input type="radio" name="q10" value="1" required> A. 协调者和粘合剂</label><br>
+            <label><input type="radio" name="q10" value="2"> B. 创新者和推动者</label><br>
+            <label><input type="radio" name="q10" value="3"> C. 领导者和决策者</label>
+        </div>
+
+        <div class="question">
+            <p>11. 当面对失败时，我通常会：</p>
+            <label><input type="radio" name="q11" value="1" required> A. 深入分析原因，避免重蹈覆辙</label><br>
+            <label><input type="radio" name="q11" value="2"> B. 感到羞愧并试图隐藏错误</label><br>
+            <label><input type="radio" name="q11" value="3"> C. 快速调整状态继续前进</label>
+        </div>
+
+        <div class="question">
+            <p>12. 对我来说最重要的是：</p>
+            <label><input type="radio" name="q12" value="1" required> A. 保持内心的平静与和谐</label><br>
+            <label><input type="radio" name="q12" value="2"> B. 获得他人的认可与喜爱</label><br>
+            <label><input type="radio" name="q12" value="3"> C. 实现自我价值和目标</label>
+        </div>
+
+        <div class="question">
+            <p>13. 当遇到压力时，我容易：</p>
+            <label><input type="radio" name="q13" value="1" required> A. 变得挑剔和苛求完美</label><br>
+            <label><input type="radio" name="q13" value="2"> B. 陷入消极情绪难以自拔</label><br>
+            <label><input type="radio" name="q13" value="3"> C. 变得急躁和缺乏耐心</label>
+        </div>
+
+        <div class="question">
+            <p>14. 在人际关系中，我最担心：</p>
+            <label><input type="radio" name="q14" value="1" required> A. 被他人控制或利用</label><br>
+            <label><input type="radio" name="q14" value="2"> B. 不被需要或失去价值</label><br>
+            <label><input type="radio" name="q14" value="3"> C. 暴露自己的弱点</label>
+        </div>
+
+        <div class="nav-btns">
+            <button type="button" onclick="window.location.href='page1.html'">上一页</button>
+            <button type="button" onclick="saveDataAndNext('page3.html')">下一页</button>
+        </div>
+    </form>
+
+    <script>
+        function saveDataAndNext(nextPage){
+            // 保存当前页数据到localStorage
+            const formData = new FormData(document.getElementById('testForm'));
+            for (let [name, value] of formData.entries()) {
+                localStorage.setItem(name, value);
+            }
+            window.location.href = nextPage;
+        }
+    </script>
+</body>
+</html>

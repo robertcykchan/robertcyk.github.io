@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>九型人格测试 - 第3页</title>
+    <style>
+        body {font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6}
+        .question {margin: 30px 0; padding: 15px; background: #f8f9fa; border-left: 4px solid #007bff}
+        button {padding: 12px 30px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer}
+        button:hover {background: #0056b3}
+        .nav-btns {margin-top: 40px; display: flex; justify-content: space-between}
+    </style>
+</head>
+<body>
+    <h2>九型人格测试（15-21题）</h2>
+    <form id="testForm">
+        <div class="question">
+            <p>15. 在完成重要任务时，我会优先考虑：</p>
+            <label><input type="radio" name="q15" value="1" required> A. 确保每个细节都完美无缺</label><br>
+            <label><input type="radio" name="q15" value="2"> B. 保持团队和谐的氛围</label><br>
+            <label><input type="radio" name="q15" value="3"> C. 高效率达成预定目标</label>
+        </div>
+
+        <div class="question">
+            <p>16. 当我感到被误解时，通常会：</p>
+            <label><input type="radio" name="q16" value="1" required> A. 收集证据证明自己</label><br>
+            <label><input type="radio" name="q16" value="2"> B. 通过情感表达争取理解</label><br>
+            <label><input type="radio" name="q16" value="3"> C. 用行动证明自身价值</label>
+        </div>
+
+        <div class="question">
+            <p>17. 对于未来的态度，我更多是：</p>
+            <label><input type="radio" name="q17" value="1" required> A. 预想各种可能的风险</label><br>
+            <label><input type="radio" name="q17" value="2"> B. 期待美好的可能性</label><br>
+            <label><input type="radio" name="q17" value="3"> C. 专注当下的实际问题</label>
+        </div>
+
+        <div class="question">
+            <p>18. 在亲密关系中，我最需要：</p>
+            <label><input type="radio" name="q18" value="1" required> A. 保持独立性和个人空间</label><br>
+            <label><input type="radio" name="q18" value="2"> B. 获得深度情感联结</label><br>
+            <label><input type="radio" name="q18" value="3"> C. 明确的关系承诺</label>
+        </div>
+
+        <div class="question">
+            <p>19. 当看到他人需要帮助时，我会：</p>
+            <label><input type="radio" name="q19" value="1" required> A. 分析是否应该介入</label><br>
+            <label><input type="radio" name="q19" value="2"> B. 立即主动提供支持</label><br>
+            <label><input type="radio" name="q19" value="3"> C. 等待对方明确请求</label>
+        </div>
+
+        <div class="question">
+            <p>20. 我的决策方式更倾向于：</p>
+            <label><input type="radio" name="q20" value="1" required> A. 长时间权衡利弊</label><br>
+            <label><input type="radio" name="q20" value="2"> B. 参考重要他人的意见</label><br>
+            <label><input type="radio" name="q20" value="3"> C. 凭直觉快速决定</label>
+        </div>
+
+        <div class="question">
+            <p>21. 当资源有限时，我会优先：</p>
+            <label><input type="radio" name="q21" value="1" required> A. 精打细算做好储备</label><br>
+            <label><input type="radio" name="q21" value="2"> B. 满足基本需求即可</label><br>
+            <label><input type="radio" name="q21" value="3"> C. 争取获得更多资源</label>
+        </div>
+
+        <div class="nav-btns">
+            <button type="button" onclick="window.location.href='page2.html'">上一页</button>
+            <button type="button" onclick="saveDataAndNext('page4.html')">下一页</button>
+        </div>
+    </form>
+
+    <script>
+        function saveDataAndNext(nextPage){
+            const formData = new FormData(document.getElementById('testForm'));
+            for (let [name, value] of formData.entries()) {
+                localStorage.setItem(name, value);
+            }
+            window.location.href = nextPage;
+        }
+    </script>
+</body>
+</html>
