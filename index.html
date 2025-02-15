@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>九型人格测试 - 第1页</title>
+    <style>
+        body {font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6}
+        .question {margin: 30px 0; padding: 15px; background: #f8f9fa; border-left: 4px solid #007bff}
+        button {padding: 12px 30px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer}
+        button:hover {background: #0056b3}
+        .nav-btns {margin-top: 40px; display: flex; justify-content: flex-end}
+    </style>
+</head>
+<body>
+    <h2>九型人格测试（1-7题）</h2>
+    <form id="testForm">
+        <div class="question">
+            <p>1. 我通常更关注：</p>
+            <label><input type="radio" name="q1" value="1" required> A. 自己的内在感受和想法</label><br>
+            <label><input type="radio" name="q1" value="2"> B. 他人的需求和感受</label><br>
+            <label><input type="radio" name="q1" value="3"> C. 现实中的目标和成就</label>
+        </div>
+
+        <div class="question">
+            <p>2. 当面对新环境时，我会首先：</p>
+            <label><input type="radio" name="q2" value="1" required> A. 观察分析潜在风险</label><br>
+            <label><input type="radio" name="q2" value="2"> B. 主动建立人际关系</label><br>
+            <label><input type="radio" name="q2" value="3"> C. 快速采取行动适应</label>
+        </div>
+
+        <div class="question">
+            <p>3. 我认为自己最大的优势是：</p>
+            <label><input type="radio" name="q3" value="1" required> A. 深刻的洞察力和分析能力</label><br>
+            <label><input type="radio" name="q3" value="2"> B. 强大的适应能力和乐观精神</label><br>
+            <label><input type="radio" name="q3" value="3"> C. 坚定的意志力和执行力</label>
+        </div>
+
+        <div class="question">
+            <p>4. 在社交场合中，我通常：</p>
+            <label><input type="radio" name="q4" value="1" required> A. 保持低调观察他人</label><br>
+            <label><input type="radio" name="q4" value="2"> B. 主动活跃气氛</label><br>
+            <label><input type="radio" name="q4" value="3"> C. 根据目的选择性交流</label>
+        </div>
+
+        <div class="question">
+            <p>5. 当我感到不安时，最常出现：</p>
+            <label><input type="radio" name="q5" value="1" required> A. 反复思考各种可能性</label><br>
+            <label><input type="radio" name="q5" value="2"> B. 寻求他人安慰支持</label><br>
+            <label><input type="radio" name="q5" value="3"> C. 用行动转移注意力</label>
+        </div>
+
+        <div class="question">
+            <p>6. 对于规则和制度，我通常：</p>
+            <label><input type="radio" name="q6" value="1" required> A. 质疑其合理性</label><br>
+            <label><input type="radio" name="q6" value="2"> B. 主动遵守维护</label><br>
+            <label><input type="radio" name="q6" value="3"> C. 根据实际情况灵活处理</label>
+        </div>
+
+        <div class="question">
+            <p>7. 当别人批评我时，我会：</p>
+            <label><input type="radio" name="q7" value="1" required> A. 深入反思批评内容</label><br>
+            <label><input type="radio" name="q7" value="2"> B. 感到受伤并自我怀疑</label><br>
+            <label><input type="radio" name="q7" value="3"> C. 立即反驳维护自己</label>
+        </div>
+
+        <div class="nav-btns">
+            <button type="button" onclick="saveDataAndNext('page2.html')">下一页</button>
+        </div>
+    </form>
+
+    <script>
+        function saveDataAndNext(nextPage){
+            // 保存当前页数据到localStorage
+            const formData = new FormData(document.getElementById('testForm'));
+            for (let [name, value] of formData.entries()) {
+                localStorage.setItem(name, value);
+            }
+            window.location.href = nextPage;
+        }
+    </script>
+</body>
+</html>
